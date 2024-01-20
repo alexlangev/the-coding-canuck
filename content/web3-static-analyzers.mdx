@@ -1,0 +1,136 @@
+---
+title: "Web3 Static Analyzers cheat sheet"
+abstract: "A cheat sheet of static analyzers used in web3"
+publishedOn: "2024-01-06T12:00:00-0400"
+lastEditedOn: "2024-01-06T12:00:00-0400"
+---
+
+## Table of content
+
+- [What are static analyzers?](#what)
+- [Slither](#slither)
+- [Aderyn](#aderyn)
+
+## <a id="what"></a>What are static analyzers
+
+A **static analyzer** is simply a program that looks at code **without executing it**. It is often used in _CI/CD workflows_, _code reviews_ and _security audits_. In this cheatsheet, we'll look at two different analyzers commonly used in security audits of Solidity codebases.
+
+## <a id="slither"></a>Slither
+
+![slither logo](slither_logo.png "Slither Logo")
+
+**Slither** is a static analyzer for **Solidity** and **Vyper** smart contracts. It has been developed by the <a target="_blank" rel="noopener noreferrer" href="https://www.trailofbits.com/">Trail Of Bits</a> team. It runs a suite of vulnerability detectors and prints out a report your terminal.
+
+For more information, go to their <a target="_blank" rel="noopener noreferrer" href="https://github.com/crytic/slither">github page</a>.
+
+### Installation
+
+#### Using Pip
+
+The easiest way to intall **Slither** is using **pip** with:
+
+```bash
+pip3 install slither-analyzer
+```
+
+#### Using git or docker
+
+Refer to <a target="_blank" rel="noopener noreferrer" href="https://github.com/crytic/slither?tab=readme-ov-file#using-git">this</a> for the instructions.
+
+### Basic usage
+
+Run **Slither** in the root directory of a Hardhat/Foundry/Dapp/Brownie application. This is the **preferred option** if your project has dependencies as **Slither** relies on the underlying compilation framework to compile source code.
+
+```bash
+slither .
+```
+
+Otherwise, you can run **Slither** on a single file that does not import dependencies with:
+
+```bash
+slither tests/uninitialized.sol
+```
+
+To use Slither without relying on a framework, you'll need to install <a target="_blank" rel="noopener noreferrer" href="https://github.com/crytic/solc-select">solc-select</a> which is a Solidity compiler and version manager combined.
+
+### Path filtering
+
+You might need to limit the scope to a few contracts or skip the analysis of certain libraries. For this, you can use `--filter-paths path1`. It will exclude all of the results that are only related to path1. The path specified can be a _path directory or a filename_. Direct string comparison and Python regular expression are used.
+
+Filter all contracts in the `lib` directory with:
+
+```bash
+slither . --filter-paths "lib"
+```
+
+Filter all contracts in the 'lib/openzeppelin-contracts' directory with:
+
+```bash
+slither . --filter-paths "openzeppelin-contracts"
+```
+
+Filter all the results only related to the file SafeMath.sol or ConvertLib.sol with:
+
+```bash
+slither . --filter-paths "Migrations.sol|ConvertLib.sol"
+```
+
+### High level overview
+
+**Slither** can produce a high level overview of the codebase with:
+
+```bash
+slither . --print human-summary
+```
+
+### Create inheritance graph
+
+**Slither** can output an **inheritance graph**. The first command outputs a `inheritance-graph.dot` file in the current directory. The second outputs a `examples/printers/inheritances.sol.dot` file in the current directory.
+
+```bash
+slither . --print inheritance-graph
+slither examples/printers/inheritances.sol --print inheritance-graph
+```
+
+To visualize the file you'll need the help of `xdot` with:
+
+```bash
+xdot examples/printers/inheritances.sol.dot
+```
+
+## <a id="aderyn"></a>Aderyn
+
+![aderyn logo](aderyn_logo.png "Aderyn Logo")
+
+**Aderyn** is a static analyzer created by the <a target="_blank" rel="noopener noreferrer" href="https://www.cyfrin.io/">Cyfrin</a>
+team. It is compatible with both hardhat and foundry. It produces a .md report. At the time of writing, it is not as good as slither. That being said, it's being developed actively compared to **Slither**.
+
+For more information look at their <a target="_blank" rel="noopener noreferrer" href="https://github.com/Cyfrin/aderyn">github page</a>.
+
+### Installation
+
+To install **Aderyn** you need to have Rust and cargo installed. you can do this with the following:
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Once you have the dependencies installed, you can install **Aderyn** with cargo with the following command:
+
+```bash
+cargo install aderyn
+```
+
+### Usage
+
+You can run **Aderyn** on all files of the current working directory with:
+
+```bash
+aderyn .
+```
+
+You can also run it on a single file:
+
+```bash
+aderyn src/MyContract.sol
+```

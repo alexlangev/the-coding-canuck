@@ -1,0 +1,154 @@
+---
+title: "Git command cheat sheet"
+abstract: "A short cheat sheet of the Git commands I use daily."
+publishedOn: "2023-11-26T12:00:00-0400"
+lastEditedOn: "2023-11-26T12:00:00-0400"
+---
+
+## Table of content
+
+- [Name and email](#name-email)
+- [Init new repository](#init)
+- [Display the status of current branch](#status)
+- [Create new branch](#create)
+- [Change/Create origin of Branch](#origin)
+- [List all local branches](#branches)
+- [Change to a different local branch](#checkout)
+- [Add changes to next commit](#add)
+- [Commit your changes](#commit)
+- [Push branch upstream](#upstream)
+- [Delete local branch](#deleteBranch)
+
+**Git** is a free open-source distributed _version control system_. Without it, collaboration becomes a problem.
+The reality is that if you want to become a developer of any kind, you'll have to master it. To install it
+simply follow the steps outlined on [Git's website](https://git-scm.com/).
+
+There are many tools to visualize and perform git commands via a _GUI_. I used the source
+control tab in _VSCode_ for a number of years. That being said, GUIs are for soy devs. If you want to gain the
+respect of senior devs at your job, learn to use the command line!
+
+## <a id="name-email"></a>Add your name and email
+
+**Git** creates an _immutable log_ of commits. Other than code, it saves information like a unique commit id,
+the timestamp and the identity of the author of the commit. Because of this, it wants your name and email.
+
+```bash
+# global user name
+git config --global user.name "Your Name"
+
+# global email
+git config --global user.email "youremail@example.com"
+```
+
+## <a id="init"></a>Init new git repo
+
+Whenever you are starting a new project. After cd'ing into the directory, the first step should be to
+_initialize a new **git** repository_.
+
+```bash
+# Create an empty Git repository or reinitialize an existing one
+git init
+```
+
+At this point, **git** will start tracking all new changes in the directory. It also creates the _main branch_.
+In older versions, it was called the _master branch_ but that triggered some people.
+
+## <a id="status"></a>Display the status of current branch
+
+It's easy to forget on which branch you are and what files were modified. Whenever you are in doubt, use `git status`.
+
+```bash
+# display branch information, changes and untracked files.
+git status
+
+# display only the changes
+git status -s
+```
+
+## <a id="create"></a>Create new branch
+
+We don't develop directly on main. Let's create a new branch instead with `branch`.
+
+```bash
+# create new branch from the one you currently are on
+git branch branchName
+```
+
+Just be vigilant from which branch you are creating this one. You'll usually want to switch
+to main before creating a branch.
+
+## <a id="origin"></a>Change/Create origin of branch
+
+You might have a repo and want to change the origin.
+
+```bash
+git remote set-url origin https://github.com/YOUR_URL.git
+```
+
+## <a id="branches"></a>List all of the local branches
+
+You'll soon start create a bunch of different branches and forget their names. Whenever you want the list,
+`branch` is the answer.
+
+```bash
+# display all local branches
+git branch
+```
+
+The output is weird here, you'll have to type `q` to exit.
+
+## <a id="checkout"></a>Change branches
+
+Switch to branches with `checkout`.
+
+```bash
+git checkout branchName
+```
+
+Just make sure that all current changes are either stashed or commited.
+
+## <a id="add"></a>Add changes
+
+You need to select which changes you want to include in the next commit. To do this, you add changes in the
+staging area with `add`.
+
+```bash
+# Add a specific file to the staging area
+git add filename.txt
+
+# Add all changes to the staging area
+git add .
+```
+
+## <a id="commit"></a>Commit your changes
+
+Once all changes are in the staging area, it's time to create the commit. Commits needs a message for future
+git archeology which will inevitably happen.
+
+```bash
+# Commit all changes currently in the staging area with a message
+git commit -m "a very professional message with no typos"
+```
+
+## <a id="upstream"></a>Push feature branch on github for the first time
+
+You created a new branch, commited stuff on it. Now you want to push on github, the standard `git push` will not work.
+You'll get an error saying "fatal: The current branch branch_name has no upstream branch". This one always gets me.
+
+This simply means that the branch that you have created locally does not exist on github. You need to create the branch
+on github.
+
+```bash
+# Create your new branch on github and push to it
+git push --set-upstream origin branch_name
+```
+
+From there you will see your new branch on Github.
+
+## <a id="deleteBranch"></a>Delete local branches
+
+Once your finished with a local branch and push it on github, it will live on your machine.
+
+```bash
+git branch -d branch_name
+```
