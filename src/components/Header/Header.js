@@ -13,13 +13,10 @@ function Header() {
 			<nav>
 				<ul className={styles.navWrapper}>
 					<li>
-						<Link href="/cheatsheets">Cheat sheets</Link>
-					</li>
-					<li>
 						<Link href="/projects">Projects</Link>
 					</li>
 					<li>
-						<Link href="/certifications">Certifications</Link>
+						<Link href="/about">About</Link>
 					</li>
 				</ul>
 			</nav>
