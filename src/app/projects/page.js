@@ -2,7 +2,7 @@ import styles from "./projects.module.css";
 
 export default function Projects() {
 	return (
-		<>
+		<div className={styles.wrapper}>
 			<h2>Projects</h2>
 			<h3>Unguided projects</h3>
 			<ul>
@@ -18,6 +18,6 @@ export default function Projects() {
 				<li>Bookbot</li>
 				<li>Web crawler</li>
 			</ul>
-		</>
+		</div>
 	);
 }

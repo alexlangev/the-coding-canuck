@@ -1,0 +1,9 @@
+.wrapper {
+    background: #ffc;
+    display: block;
+    height: 20em;
+    width: 20em;
+    padding: 1em;
+    box-shadow: var(--shadow-low);
+    rotate: 3deg;
+  }

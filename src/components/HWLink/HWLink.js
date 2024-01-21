@@ -1,13 +1,11 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
-import styles from "./MainLogo.module.css";
+import styles from "./HWLink.module.css";
 import { RoughNotation } from "react-rough-notation";
 import { useState } from "react";
-import { BLOG_TITLE } from "@/constants";
 
-function MainLogo() {
+function HWLink({ href, children, isOn }) {
 	const [isUnderlined, setIsUnderlined] = useState(false);
 
 	const handleMouseEnter = () => {
@@ -29,7 +27,7 @@ function MainLogo() {
 	return (
 		<Link
 			className={styles.wrapper}
-			href="/"
+			href={href}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			onFocus={handleFocus}
@@ -37,7 +35,7 @@ function MainLogo() {
 		>
 			<RoughNotation
 				strokeWidth={2}
-				padding={0}
+				padding={3}
 				animationDelay={0}
 				animationDuration={250}
 				iterations={1}
@@ -45,10 +43,10 @@ function MainLogo() {
 				show={isUnderlined}
 				animate={true}
 			>
-				{BLOG_TITLE}
+				{children}
 			</RoughNotation>
 		</Link>
 	);
 }
 
-export default MainLogo;
+export default HWLink;

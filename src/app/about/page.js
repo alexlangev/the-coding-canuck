@@ -2,7 +2,7 @@ import styles from "./about.module.css";
 
 export default function About() {
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<h2>Certifications</h2>
 			<p>A little about me...</p>
 			<p>photo</p>
