@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import styles from "./MainLogo.module.css";
 import { RoughNotation } from "react-rough-notation";
@@ -9,6 +9,13 @@ import { BLOG_TITLE } from "@/constants";
 
 function MainLogo() {
 	const [isUnderlined, setIsUnderlined] = useState(false);
+	const [underlinedColor, setUnderlinedColor] = useState("white");
+
+	useEffect(() => {
+		const root = document.documentElement;
+		const theme = root.getAttribute("data-color-theme");
+		setUnderlinedColor(theme === "light" ? "black" : "white");
+	});
 
 	const handleMouseEnter = () => {
 		setIsUnderlined(true);
@@ -44,6 +51,7 @@ function MainLogo() {
 				type="underline"
 				show={isUnderlined}
 				animate={true}
+				color={underlinedColor}
 			>
 				{BLOG_TITLE}
 			</RoughNotation>

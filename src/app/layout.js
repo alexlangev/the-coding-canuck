@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
 			className={clsx(inter.variable, caveat.variable)}
 		>
 			<body>
-				<Header />
+				<Header initialTheme={theme} />
 				<main>{children}</main>
 				<Footer />
 			</body>

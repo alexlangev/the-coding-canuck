@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect } from "react";
 import MainLogo from "../MainLogo";
 import styles from "./Header.module.css";
 import { Sun, Moon } from "react-feather";
@@ -11,6 +11,11 @@ import { DARK_TOKENS, LIGHT_TOKENS } from "@/constants";
 
 function Header({ initialTheme, className, ...delegated }) {
 	const [theme, setTheme] = useState(initialTheme);
+
+	useEffect(() => {
+		const root = document.documentElement;
+		root.setAttribute("data-color-theme", theme);
+	}, []);
 
 	function handleToggleTheme() {
 		const newTheme = theme === "light" ? "dark" : "light";
