@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import { cache } from "react";
 
 function readFile(localPath) {
-	console.log("local path", localPath);
 	return fs.readFile(path.join(process.cwd(), localPath), "utf8");
 }
 
@@ -51,7 +50,7 @@ const getLatestContent = async () => {
 			);
 			const { data: frontmatter } = matter(rawContent);
 			content.push({
-				slug: fileName.replace(".mdx", ""),
+				slug: `${contentType}/${fileName.replace(".mdx", "")}`,
 				...frontmatter,
 			});
 		}
@@ -59,4 +58,46 @@ const getLatestContent = async () => {
 	return content.sort((a, b) => (a.publishedOn < b.publishedOn ? 1 : -1));
 };
 
-export { getCheatSheets, getBlogPosts, getLatestContent };
+const loadPost = cache(async function loadPost(slug) {
+	console.log("HERE!!!!", slug, `/content/posts/${slug}.mdx`);
+	let rawContent;
+
+	// Wrapping this operation in a try/catch so that it stops
+	// throwing an error if the file can't be found. Instead,
+	// we'll return `null`, and the caller can figure out how
+	// to handle this situation.
+	try {
+		rawContent = await readFile(`/content/posts/${slug}.mdx`);
+	} catch (err) {
+		return null;
+	}
+
+	const { data: frontmatter, content } = matter(rawContent);
+	return { frontmatter, content };
+});
+
+const loadCheatSheets = cache(async function loadCheatSheets(slug) {
+	console.log("HERE!!!!", slug, `/content/cheat_sheets/${slug}.mdx`);
+	let rawContent;
+
+	// Wrapping this operation in a try/catch so that it stops
+	// throwing an error if the file can't be found. Instead,
+	// we'll return `null`, and the caller can figure out how
+	// to handle this situation.
+	try {
+		rawContent = await readFile(`/content/cheat_sheets/${slug}.mdx`);
+	} catch (err) {
+		return null;
+	}
+
+	const { data: frontmatter, content } = matter(rawContent);
+	return { frontmatter, content };
+});
+
+export {
+	getCheatSheets,
+	getBlogPosts,
+	getLatestContent,
+	loadPost,
+	loadCheatSheets,
+};

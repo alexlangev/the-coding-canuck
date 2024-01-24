@@ -6,22 +6,13 @@
   
   .sheet {
     background-color: bisque;  /*temp*/
+    padding: 0 1rem;
     border-left: 2px dashed black; /*temp*/
     border-right: 2px dashed black; /*temp*/
-    padding: 0 1rem;
-}
-
-.rightStrip,
-.leftStrip {
-  flex: 0 0 auto;
-  width: 10px; /* Set a width for the strips */
-  overflow: hidden; /* Hide any content that might be within */
-}
-
-.rightStrip {
-  border-left: 44px solid bisque;
-}
-
-.leftStrip {
-  border-right: 44px solid bisque;
-}
+    /* border-left: 44px solid transparent; */
+    border-image-slice: 128;
+    border-image-width: 0px 40px;
+    border-image-outset: 0px 40px;
+    border-image-repeat: round round;
+    border-image-source: url('../../../public/icons/matrix-test.svg');
+  }
