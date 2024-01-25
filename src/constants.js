@@ -13,13 +13,17 @@ export const LIGHT_TOKENS = {
 	"--grid-paper-lines": "hsl(0, 0%, 88%)",
 
 	// dot matrix paper
-	"--color-card-border": "transparent",
+	"--color-dot-matrix-background": "hsl(45, 100%, 85%) ",
 
 	// post-its
+	"--color-postit-background": "hsl(60, 100%, 75%) ",
 
 	// polaroid
 
 	// flash cards
+
+	"--color-card-border": "transparent",
+	"--color-flashcard-background": "hsl(40, 100%, 90%)",
 
 	// font
 	"--color-primary": "black",
@@ -31,13 +35,15 @@ export const DARK_TOKENS = {
 	"--grid-paper-lines": "hsl(240, 2%, 18%)",
 
 	// dot matrix paper
-	"--color-card-border": "transparent", // modify?
+	"--color-dot-matrix-background": "hsl(45, 100%, 85%) ",
 
 	// post-its
+	"--color-postit-background": "hsl(60, 100%, 75%) ",
 
 	// polaroid
 
 	// flash cards
+	"--color-card-border": "transparent", // modify?
 
 	// font
 	"--color-primary": "white",

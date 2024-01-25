@@ -1,5 +1,5 @@
 .wrapper {
-    background: #ffc;
+    background: var(--color-postit-background);
     display: block;
     height: 20em;
     width: 20em;

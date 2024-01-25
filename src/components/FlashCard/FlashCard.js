@@ -6,11 +6,15 @@ export default function FlashCard({ slug, title, publishedOn, abstract }) {
 	const humanizedDate = format(new Date(publishedOn), "MMMM do, yyyy");
 	const href = `/${slug}`;
 	return (
-		<article className={styles.wrapper}>
-			<p>{title}</p>
-			<time dateTime={publishedOn}>{humanizedDate}</time>
-			<p>{abstract}</p>
-			<a href={href}>Read On...</a>
-		</article>
+		<div className={styles.wrapper}>
+			<div className={styles.decoratingWrapper}>
+				<article className={styles.content}>
+					<p>{title}</p>
+					<time dateTime={publishedOn}>{humanizedDate}</time>
+					<p>{abstract}</p>
+					<a href={href}>Read On...</a>
+				</article>
+			</div>
+		</div>
 	);
 }
