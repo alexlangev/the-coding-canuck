@@ -4,6 +4,11 @@
     height: 20em;
     width: 20em;
     padding: 1em;
-    /* box-shadow: var(--shadow-low); */
-    rotate: 3deg;
+    rotate: 2deg;
+    color: black;
+    font-family: var(--font-family-hand);
+    display: flex;
+    flex-direction: column;
   }
+
+  

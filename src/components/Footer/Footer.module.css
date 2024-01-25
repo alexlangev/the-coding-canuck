@@ -1,14 +1,24 @@
 .wrapper {
-  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: var(--header-height);
+  align-items: flex-start;
+  height: fit-content;
   width: 100%;
   max-width: var(--content-width);
   padding: 0 var(--viewport-padding);
   margin-left: auto;
   margin-right: auto;
+}
+
+.header {
+  margin-top: 0.5em;
+  font-size: 2.25em;
+  text-align: center;
+}
+
+.linkList {
+  list-style-type: none;
+  font-size: 1.75em;
 }
 
 @media (min-width: 35rem) {
@@ -24,55 +34,3 @@
     gap: 32px;
   }
 }
-
-/* .content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 64px;
-  width: 100%;
-  max-width: var(--content-width);
-  padding: 0 var(--viewport-padding);
-  padding-bottom: 48px;
-  font-size: 2.25rem;
-} */
-
-/* .attribution {
-  margin-top: 24px;
-  font-size: 0.875rem;
-  color: var(--color-decorative-900);
-  max-width: 18rem;
-} */
-
-/* .attribution a {
-  color: var(--color-gray-900);
-  text-decoration: none;
-  font-weight: 700;
-} */
-
-/* .attribution a:hover {
-  text-decoration: revert;
-  text-underline-offset: 0.125em;
-  text-decoration-thickness: 1.5px;
-} */
-
-/* .linkHeading {
-  font-size: 1.25rem;
-} */
-
-/* .linkList {
-  margin-top: 24px;
-  list-style-type: none;
-  padding: 0;
-  color: hsl(0deg 0% 5%);
-} */
-
-/* .linkList li:not(:last-child) {
-  margin-bottom: 8px;
-} */
-
-/* .linkList a {
-  text-decoration: none;
-  font-size: 1.1rem;
-} */

@@ -6,6 +6,7 @@
     max-width: var(--content-width);
     padding: 64px var(--viewport-padding);
     margin: 0 auto;
+    font-family: var(--font-family-hand);
 }
 
 @media (min-width: 35rem) {
