@@ -1,12 +1,20 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import styles from "./HWLink.module.css";
+import styles from "./HWMainLogo.module.css";
 import { RoughNotation } from "react-rough-notation";
-import { useState } from "react";
+import { BLOG_TITLE } from "@/constants";
+import { useTheme } from "@/utils/hooks/useTheme";
 
-function HWLink({ href, children, isOn }) {
+export default function HWMainLogo() {
 	const [isUnderlined, setIsUnderlined] = useState(false);
+	const [underlinedColor, setUnderlinedColor] = useState("white");
+	const theme = useTheme();
+
+	useEffect(() => {
+		setUnderlinedColor(theme === "light" ? "black" : "white");
+	}, [theme]);
 
 	const handleMouseEnter = () => {
 		setIsUnderlined(true);
@@ -27,26 +35,25 @@ function HWLink({ href, children, isOn }) {
 	return (
 		<Link
 			className={styles.wrapper}
-			href={href}
+			href="/"
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			onFocus={handleFocus}
 			onBlur={handleBlur}
 		>
 			<RoughNotation
-				strokeWidth={2}
-				padding={3}
+				strokeWidth={2.5}
+				padding={-2}
 				animationDelay={0}
-				animationDuration={250}
-				iterations={1}
+				animationDuration={375}
+				iterations={3}
 				type="underline"
 				show={isUnderlined}
 				animate={true}
+				color={underlinedColor}
 			>
-				{children}
+				{BLOG_TITLE}
 			</RoughNotation>
 		</Link>
 	);
 }
-
-export default HWLink;

@@ -8,13 +8,37 @@ export const BLOG_DESCRIPTION =
 /** ------------- DARK ------------ */
 
 export const LIGHT_TOKENS = {
-	"--color-card-border": "transparent",
+	// grid paper
 	"--grid-paper-background": "hsl(0, 0%, 100%)",
 	"--grid-paper-lines": "hsl(0, 0%, 88%)",
+
+	// dot matrix paper
+	"--color-card-border": "transparent",
+
+	// post-its
+
+	// polaroid
+
+	// flash cards
+
+	// font
+	"--color-primary": "black",
 };
 
 export const DARK_TOKENS = {
-	"--color-card-border": "transparent", // modify?
+	// grid paper
 	"--grid-paper-background": "hsl(240, 2%, 11%)",
 	"--grid-paper-lines": "hsl(240, 2%, 18%)",
+
+	// dot matrix paper
+	"--color-card-border": "transparent", // modify?
+
+	// post-its
+
+	// polaroid
+
+	// flash cards
+
+	// font
+	"--color-primary": "white",
 };

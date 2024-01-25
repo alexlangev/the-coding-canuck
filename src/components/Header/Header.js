@@ -1,15 +1,17 @@
 "use client";
-import { useEffect } from "react";
-import MainLogo from "../MainLogo";
+import { RoughSVG } from "react-rough-fiber";
+import { useEffect, useState } from "react";
+import HWMainLogo from "@/components/HWMainLogo";
+import HWNavLink from "@/components/HWNavLink";
 import styles from "./Header.module.css";
 import { Sun, Moon } from "react-feather";
-import Link from "next/link";
+import { RoughNotation } from "react-rough-notation";
+import HWIcon from "@/components/HWIcon";
+
 import Cookie from "js-cookie";
-import HWLink from "../HWLink";
-import { useState } from "react";
 import { DARK_TOKENS, LIGHT_TOKENS } from "@/constants";
 
-function Header({ initialTheme, className, ...delegated }) {
+export default function Header({ initialTheme, className, ...delegated }) {
 	const [theme, setTheme] = useState(initialTheme);
 
 	useEffect(() => {
@@ -35,19 +37,19 @@ function Header({ initialTheme, className, ...delegated }) {
 		<div className={styles.wrapper}>
 			<div className={styles.leftSideWrapper}>
 				<div>
-					<MainLogo />
+					<HWMainLogo />
 				</div>
 				<nav>
 					<ul className={styles.navListWrapper}>
 						<li className={styles.navListItem}>
-							<HWLink href="/projects" isOn={true}>
+							<HWNavLink href="/projects" isOn={true}>
 								Projects
-							</HWLink>
+							</HWNavLink>
 						</li>
 						<li className={styles.navListItem}>
-							<HWLink href="/about" isOn={false}>
+							<HWNavLink href="/about" isOn={false}>
 								About
-							</HWLink>
+							</HWNavLink>
 						</li>
 					</ul>
 				</nav>
@@ -55,14 +57,12 @@ function Header({ initialTheme, className, ...delegated }) {
 			<div>
 				<button className={styles.action} onClick={handleToggleTheme}>
 					{theme === "light" ? (
-						<Sun size="1.5rem" />
+						<HWIcon icon="Sun" size="2rem" />
 					) : (
-						<Moon size="1.5rem" />
+						<HWIcon icon="Moon" size="2rem" />
 					)}
 				</button>
 			</div>
 		</div>
 	);
 }
-
-export default Header;

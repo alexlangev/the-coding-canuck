@@ -1,21 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
-import styles from "./MainLogo.module.css";
+import styles from "./HWNavLink.module.css";
 import { RoughNotation } from "react-rough-notation";
-import { useState } from "react";
-import { BLOG_TITLE } from "@/constants";
+import { useState, useEffect } from "react";
+import { useTheme } from "@/utils/hooks/useTheme";
 
-function MainLogo() {
+export default function HWNavLink({ href, children, isOn }) {
 	const [isUnderlined, setIsUnderlined] = useState(false);
 	const [underlinedColor, setUnderlinedColor] = useState("white");
 
+	const theme = useTheme();
+
 	useEffect(() => {
-		const root = document.documentElement;
-		const theme = root.getAttribute("data-color-theme");
 		setUnderlinedColor(theme === "light" ? "black" : "white");
-	});
+	}, [theme]);
 
 	const handleMouseEnter = () => {
 		setIsUnderlined(true);
@@ -36,27 +35,25 @@ function MainLogo() {
 	return (
 		<Link
 			className={styles.wrapper}
-			href="/"
+			href={href}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 			onFocus={handleFocus}
 			onBlur={handleBlur}
 		>
 			<RoughNotation
-				strokeWidth={2}
-				padding={0}
+				strokeWidth={2.5}
+				padding={1}
 				animationDelay={0}
 				animationDuration={250}
-				iterations={1}
+				iterations={2}
 				type="underline"
 				show={isUnderlined}
 				animate={true}
 				color={underlinedColor}
 			>
-				{BLOG_TITLE}
+				{children}
 			</RoughNotation>
 		</Link>
 	);
 }
-
-export default MainLogo;

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import MainLogo from "../MainLogo";
+import MainLogo from "../HWMainLogo";
 import PostIt from "../PostIt";
 
 function Footer() {
