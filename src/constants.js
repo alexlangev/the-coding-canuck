@@ -13,6 +13,7 @@ export const LIGHT_TOKENS = {
 	"--grid-paper-lines": "hsl(0, 0%, 88%)",
 
 	// dot matrix paper
+	"--color-dot-matrix-text": "black",
 	"--color-dot-matrix-background": "hsl(45, 100%, 85%) ",
 
 	// post-its
@@ -34,6 +35,7 @@ export const DARK_TOKENS = {
 	"--grid-paper-lines": "hsl(240, 2%, 18%)",
 
 	// dot matrix paper
+	"--color-dot-matrix-text": "black",
 	"--color-dot-matrix-background": "hsl(45, 100%, 85%) ",
 
 	// post-its

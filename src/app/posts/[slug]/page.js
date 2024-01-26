@@ -1,4 +1,5 @@
 import React from "react";
+import MatrixPaper from "@/components/MatrixPaper";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
@@ -38,9 +39,9 @@ async function BlogPost({ params }) {
 
 	return (
 		<article className={styles.wrapper}>
-			<div>
+			<MatrixPaper>
 				<MDXRemote source={content} components={COMPONENT_MAP} />
-			</div>
+			</MatrixPaper>
 		</article>
 	);
 }
