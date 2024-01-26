@@ -1,2 +1,2 @@
-export * from './ScotchTape';
-export { default } from './ScotchTape';
+export * from "./ScotchTape";
+export { default } from "./ScotchTape";

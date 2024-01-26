@@ -1,7 +1,7 @@
-// import CodeSnippet from "@/components/CodeSnippet";
+import CodeBlock from "@/components/CodeBlock";
 
 const COMPONENT_MAP = {
-	//   pre: CodeSnippet,
+	pre: CodeBlock,
 };
 
 export default COMPONENT_MAP;

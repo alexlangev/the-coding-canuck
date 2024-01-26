@@ -1,0 +1,65 @@
+.tape1,
+.tape2,
+.tape3,
+.tape4 {
+  position: relative;
+}
+
+.tape1:before,
+.tape2:before,
+.tape3:before,
+.tape1:after,
+.tape2:after,
+.tape4:before {
+  background: rgba(255, 255, 235, 0.6);
+  box-shadow: var(--shadow-stuck);
+  /* box-shadow:rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+  content: "";
+  display: block;
+  height: 30px;
+  position: absolute;
+  margin: auto;
+  width: 100px;
+}
+
+.tape3:before {
+  width: 162px;
+}
+
+.tape4:before {
+  width: 131px;
+}
+
+.tape1:before {
+  left: -45px;
+  top: 2px;
+  transform: rotate(-36deg);
+}
+.tape1:after {
+  right: -50px;
+  top: -7px;
+  transform: rotate(47deg);
+}
+
+.tape2:before {
+  left: -58px;
+  top: 3px;
+  transform: rotate(-56deg);
+}
+.tape2:after {
+  right: -48px;
+  top: 4px;
+  transform: rotate(39deg);
+}
+
+.tape3:before {
+  left: calc(50% - 80px);
+  top: -12px;
+  transform: rotate(-2deg);
+}
+
+.tape4:before {
+  left: calc(46% - 64px);
+  top: -14px;
+  transform: rotate(3deg);
+}
