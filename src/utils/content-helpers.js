@@ -59,7 +59,6 @@ const getLatestContent = async () => {
 };
 
 const loadPost = cache(async function loadPost(slug) {
-	console.log("HERE!!!!", slug, `/content/posts/${slug}.mdx`);
 	let rawContent;
 
 	// Wrapping this operation in a try/catch so that it stops
@@ -77,7 +76,6 @@ const loadPost = cache(async function loadPost(slug) {
 });
 
 const loadCheatSheets = cache(async function loadCheatSheets(slug) {
-	console.log("HERE!!!!", slug, `/content/cheat_sheets/${slug}.mdx`);
 	let rawContent;
 
 	// Wrapping this operation in a try/catch so that it stops

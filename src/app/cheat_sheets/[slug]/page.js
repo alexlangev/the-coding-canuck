@@ -28,7 +28,6 @@ export async function generateMetadata({ params }) {
 }
 
 async function BlogPost({ params }) {
-	console.log("BAP!", params, params.slug);
 	const blogPostData = await loadCheatSheets(params.slug);
 	// If there is no blog post with the slug taken from the route
 	// params, render a 404 page instead.
