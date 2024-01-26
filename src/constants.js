@@ -21,8 +21,7 @@ export const LIGHT_TOKENS = {
 	// polaroid
 
 	// flash cards
-
-	"--color-card-border": "transparent",
+	"--color-flashcard-text": "black",
 	"--color-flashcard-background": "hsl(40, 100%, 90%)",
 
 	// font
@@ -43,7 +42,8 @@ export const DARK_TOKENS = {
 	// polaroid
 
 	// flash cards
-	"--color-card-border": "transparent", // modify?
+	"--color-flashcard-text": "black",
+	"--color-flashcard-background": "hsl(40, 100%, 90%)",
 
 	// font
 	"--color-primary": "white",

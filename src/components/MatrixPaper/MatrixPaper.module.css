@@ -1,18 +1,24 @@
 .wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .sheet {
-    background-color: bisque;  /*temp*/
-    padding: 0 1rem;
-    border-left: 2px dashed black; /*temp*/
-    border-right: 2px dashed black; /*temp*/
-    /* border-left: 44px solid transparent; */
-    border-image-slice: 128;
-    border-image-width: 0px 40px;
-    border-image-outset: 0px 40px;
-    border-image-repeat: round round;
-    border-image-source: url('../../../public/icons/matrix-test.svg');
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: var(--content-width);
+  padding: 64px var(--viewport-padding);
+  margin: 0 auto;
+}
+
+.perforated {
+  padding: 0 1rem;
+  border-left: 1px dashed black;
+  border-right: 1px dashed black;
+}
+
+.sheet {
+  background-color: bisque;  /*temp*/
+  border-image-slice: 128;
+  border-image-width: 0px 40px;
+  border-image-outset: 0px 40px;
+  border-image-repeat: round round;
+  border-image-source: url('../../../public/icons/matrix-test.svg');
+}

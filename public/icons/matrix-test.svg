@@ -40,32 +40,32 @@
      id="layer1">
     <path
        id="rect1"
-       style="display:inline;fill:#5d6acd;fill-opacity:0.497925;stroke:#000000;stroke-width:0"
+       style="display:inline;fill:bisque;fill-opacity:1;stroke:#000000;stroke-width:0"
        d="M 0,0 V 35.277862 H 35.277862 V 0 Z m 17.638703,8.8193516 a 8.8194342,8.8194342 0 0 1 8.819808,8.8193514 8.8194342,8.8194342 0 0 1 -8.819808,8.819808 8.8194342,8.8194342 0 0 1 -8.8193514,-8.819808 8.8194342,8.8194342 0 0 1 8.8193514,-8.8193514 z"
        inkscape:label="hole-top-left" />
     <path
        id="rect1-5"
-       style="display:inline;fill:#5d6acd;fill-opacity:0.497925;stroke:#000000;stroke-width:0"
+       style="display:inline;fill:bisque;fill-opacity:1;stroke:#000000;stroke-width:0"
        d="M 0,35.277737 V 70.555598 H 35.27786 V 35.277737 Z m 17.638701,8.819351 a 8.8194342,8.8194342 0 0 1 8.819813,8.819352 8.8194342,8.8194342 0 0 1 -8.819813,8.819807 8.8194342,8.8194342 0 0 1 -8.8193462,-8.819807 8.8194342,8.8194342 0 0 1 8.8193462,-8.819352 z"
        inkscape:label="hole-mid-left" />
     <path
        id="rect1-0"
-       style="display:inline;fill:#5d6acd;fill-opacity:0.497925;stroke:#000000;stroke-width:0"
+       style="display:inline;fill:bisque;fill-opacity:1;stroke:#000000;stroke-width:0"
        d="M 0,70.555473 V 105.83333 H 35.277862 V 70.555473 Z m 17.638703,8.819355 a 8.8194342,8.8194342 0 0 1 8.819808,8.819344 8.8194342,8.8194342 0 0 1 -8.819808,8.819815 8.8194342,8.8194342 0 0 1 -8.8193511,-8.819815 8.8194342,8.8194342 0 0 1 8.8193511,-8.819344 z"
        inkscape:label="hole-bot-left" />
     <path
        id="rect1-6"
-       style="display:inline;fill:#5d6acd;fill-opacity:0.497925;stroke:#000000;stroke-width:0"
+       style="display:inline;fill:bisque;fill-opacity:1;stroke:#000000;stroke-width:0"
        d="M 70.555473,0 V 35.277861 H 105.83333 V 0 Z m 17.638699,8.8193516 a 8.8194342,8.8194342 0 0 1 8.819815,8.8193514 8.8194342,8.8194342 0 0 1 -8.819815,8.819807 8.8194342,8.8194342 0 0 1 -8.819344,-8.819807 8.8194342,8.8194342 0 0 1 8.819344,-8.8193514 z"
        inkscape:label="hole-top-right" />
     <path
        id="rect1-3"
-       style="display:inline;fill:#5d6acd;fill-opacity:0.497925;stroke:#000000;stroke-width:0"
+       style="display:inline;fill:bisque;fill-opacity:1;stroke:#000000;stroke-width:0"
        d="m 70.555473,35.277737 v 35.27786 h 35.277857 v -35.27786 z m 17.638699,8.819351 a 8.8194342,8.8194342 0 0 1 8.819807,8.819352 8.8194342,8.8194342 0 0 1 -8.819807,8.819811 8.8194342,8.8194342 0 0 1 -8.819353,-8.819811 8.8194342,8.8194342 0 0 1 8.819353,-8.819352 z"
        inkscape:label="hole2" />
     <path
        id="rect1-2"
-       style="display:inline;fill:#5d6acd;fill-opacity:0.497925;stroke:#000000;stroke-width:0"
+       style="display:inline;fill:bisque;fill-opacity:1;stroke:#000000;stroke-width:0"
        d="M 70.555473,70.555473 V 105.83333 H 105.83333 V 70.555473 Z m 17.638701,8.819349 a 8.8194342,8.8194342 0 0 1 8.819813,8.819355 8.8194342,8.8194342 0 0 1 -8.819813,8.819802 8.8194342,8.8194342 0 0 1 -8.819346,-8.819802 8.8194342,8.8194342 0 0 1 8.819346,-8.819355 z"
        inkscape:label="hole-bot-right" />
   </g>

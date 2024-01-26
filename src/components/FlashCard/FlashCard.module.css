@@ -1,34 +1,52 @@
-.wrapper {
-    padding: var(--viewport-padding);
-
-    margin-bottom: 64px;
-    border: 1px solid var(--color-card-border);
-    width: 700px;
-    height: 375px;
+.wrapper{
+    position: relative;
+    margin-bottom: 64px; /* review this value? */
+    width: 700px; /* review this value? */
+    height: 375px; /* review this value? */
     background-color: var(--color-flashcard-background);
     border-radius: 2px;
-
-    /* Red line top of flashcard */
-    background-image: linear-gradient(red, red);
-    background-position: 0 38px;
-    background-size: 100% 1.5px;
-    background-repeat: no-repeat;
 }
 
-.decoratingWrapper {
-    margin-top: 16px;
-    margin-left: calc(var(--viewport-padding) * -1);
-    margin-right: calc(var(--viewport-padding) * -1);
-    height: 100%;
+.decoratingRedLine {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    border-bottom: 2px solid red;
+}
+
+.decoratingBlueLines {
+    top: 50px;
+    position: absolute;
+    height: calc(100% - 50px);
+    width: 100%;
     background-image: repeating-linear-gradient(
         to bottom,
         transparent,
-        transparent 20px,
-        blue 21px,
-        blue 21px
+        transparent 20px, /* review this value? */
+        blue 21px, /* review this value? */
+        blue 21px /* review this value? */
     );
 }
 
 .content {
-    padding: var(--viewport-padding)
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    padding: var(--viewport-padding);
+    color: var(--color-flashcard-text)
 }
+
+.cardHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cardBody{
+    flex: 1;
+}
+
+.cardFooter{}
