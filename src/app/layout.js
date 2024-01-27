@@ -1,4 +1,4 @@
-import { Inter, Caveat } from "next/font/google";
+import { Red_Hat_Text, Red_Hat_Mono, Caveat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -11,11 +11,18 @@ import {
 } from "@/constants";
 import { cookies } from "next/headers";
 
-const inter = Inter({
+const red_hat_text = Red_Hat_Text({
 	subsets: ["latin"],
 	display: "fallback",
 	weight: "variable",
 	variable: "--font-family",
+});
+
+const red_hat_mono = Red_Hat_Mono({
+	subsets: ["latin"],
+	display: "fallback",
+	weight: "variable",
+	variable: "--font-family-code",
 });
 
 const caveat = Caveat({
@@ -38,7 +45,11 @@ export default function RootLayout({ children }) {
 		<html
 			lang="en"
 			style={theme === "light" ? LIGHT_TOKENS : DARK_TOKENS}
-			className={clsx(inter.variable, caveat.variable)}
+			className={clsx(
+				red_hat_text.variable,
+				red_hat_mono.variable,
+				caveat.variable
+			)}
 		>
 			<body>
 				<Header initialTheme={theme} />

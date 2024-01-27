@@ -2,6 +2,8 @@ import React from "react";
 import MatrixPaper from "@/components/MatrixPaper";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import PostHero from "@/components/PostHero";
+import { format } from "date-fns";
 
 // import { BLOG_TITLE } from "@/constants";
 import { loadPost } from "@/utils/content-helpers";
@@ -36,11 +38,20 @@ async function BlogPost({ params }) {
 	}
 
 	const { frontmatter, content } = blogPostData;
+	const humanizedDate = format(
+		new Date(frontmatter.lastEditedOn),
+		"MMMM do, yyyy"
+	);
 
 	return (
 		<article className={styles.wrapper}>
 			<MatrixPaper>
+				<PostHero
+					title={frontmatter.title}
+					publishedOn={frontmatter.publishedOn}
+				/>
 				<MDXRemote source={content} components={COMPONENT_MAP} />
+				<div>Last edited on: {humanizedDate}</div>
 			</MatrixPaper>
 		</article>
 	);
