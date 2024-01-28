@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import clsx from "clsx";
+
 import {
 	BLOG_TITLE,
 	BLOG_DESCRIPTION,
