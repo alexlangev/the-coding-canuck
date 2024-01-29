@@ -1,0 +1,13 @@
+.wrapper {
+    background: white;
+    display: block;
+    padding: 15px;
+    padding-bottom: 38px;
+
+}
+
+.image {
+    max-width: none;
+}
+
+.caption {}

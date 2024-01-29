@@ -9,7 +9,7 @@
     font-family: var(--font-family-hand);
 }
 
-@media (min-width: 35rem) {
+/* @media (min-width: 35rem) {
   .wrapper h2 {
     font-size: 2.25rem;
   }
@@ -21,4 +21,4 @@
   .wrapper h4 {
     font-size: 1.5rem;
   }
-}
+} */
