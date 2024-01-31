@@ -14,8 +14,7 @@ export default function Header({ initialTheme, className, ...delegated }) {
 	useEffect(() => {
 		const root = document.documentElement;
 		root.setAttribute("data-color-theme", theme);
-		// eslint-disable-line react-hooks/exhaustive-deps
-	}, []);
+	}, []); // eslint-disable-line
 
 	function handleToggleTheme() {
 		const newTheme = theme === "light" ? "dark" : "light";
