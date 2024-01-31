@@ -5,6 +5,7 @@
     height: 375px; /* review this value? */
     background-color: var(--color-flashcard-background);
     border-radius: 2px;
+    box-shadow: var(--shadow-med);
 }
 
 .decoratingRedLine {

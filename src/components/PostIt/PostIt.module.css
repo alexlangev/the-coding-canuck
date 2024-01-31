@@ -9,7 +9,8 @@
     color: black;
     font-family: var(--font-family-hand);
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
+    box-shadow: var(--shadow-med);
   }
 
   

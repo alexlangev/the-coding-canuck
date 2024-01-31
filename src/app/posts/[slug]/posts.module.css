@@ -17,6 +17,7 @@
   margin: 0 auto;
   padding: 64px var(--viewport-padding) 32px;
   background-color: var(--dot-matrix-paper-background);
+
 }
 
 .page ul, .page ol {

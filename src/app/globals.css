@@ -156,11 +156,14 @@ p {
 p code {
   display: inline-block;
   font-size: 0.9em;
-  padding: 3px 6px;
-  margin: -0.25em -1px;
+  padding: 0px 5px;
+  margin: -0.25em -0.5px;
   border-radius: 3px;
-  /* background: var(--color-inline-code-bg);
-  color: var(--color-inline-code-font); */
+  background-color: #0d1117;
+  color: #A5D6FF;
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+  font-weight: 600;
 }
 
 details {
