@@ -17,12 +17,15 @@
   margin: 0 auto;
   padding: 64px var(--viewport-padding) 32px;
   background-color: var(--dot-matrix-paper-background);
-  box-shadow: var(--shadow-med);
 }
 
 .page ul, .page ol {
   padding-bottom: 2.5rem;
   font-size: 1.25rem;
+}
+
+.page img {
+  margin: auto
 }
 
 .page > * {

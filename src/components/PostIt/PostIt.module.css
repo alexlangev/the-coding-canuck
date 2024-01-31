@@ -4,6 +4,7 @@
     height: 20em;
     width: 20em;
     padding: 1em;
+    padding-top: 0;
     rotate: 2deg;
     color: black;
     font-family: var(--font-family-hand);

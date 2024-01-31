@@ -41,16 +41,16 @@ export default function Header({ initialTheme, className, ...delegated }) {
 				</div>
 				<nav>
 					<ul className={styles.navListWrapper}>
-						<li className={styles.navListItem}>
+						{/* <li className={styles.navListItem}>
 							<HWNavLink href="/projects" isOn={true}>
 								Projects
 							</HWNavLink>
-						</li>
-						<li className={styles.navListItem}>
+						</li> */}
+						{/* <li className={styles.navListItem}>
 							<HWNavLink href="/about" isOn={false}>
 								About
 							</HWNavLink>
-						</li>
+						</li> */}
 					</ul>
 				</nav>
 			</div>

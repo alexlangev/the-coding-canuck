@@ -120,7 +120,7 @@ body > main {
 }
 
 code {
-  /* font-family: var(--font-family-mono); */
+  font-family: var(--font-family-mono);
 }
 
 h1 {
