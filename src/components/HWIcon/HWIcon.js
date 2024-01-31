@@ -3,7 +3,7 @@ import { RoughSVG } from "react-rough-fiber";
 import { RoughNotation } from "react-rough-notation";
 import { Sun, Moon } from "react-feather";
 import { useEffect, useState } from "react";
-import { useTheme } from "@/utils/hooks/useTheme";
+// import { useTheme } from "@/utils/hooks/useTheme";
 
 const VALID_ICONS = ["Sun", "Moon"];
 
@@ -16,11 +16,11 @@ export default function HWIcon({ icon, ...delegated }) {
 
 	const [isUnderlined, setIsUnderlined] = useState(false);
 	const [underlinedColor, setUnderlinedColor] = useState("white");
-	const theme = useTheme();
+	// const theme = useTheme();
 
-	useEffect(() => {
-		setUnderlinedColor(theme === "light" ? "black" : "white");
-	}, [theme]);
+	// useEffect(() => {
+	// 	setUnderlinedColor(theme === "light" ? "black" : "white");
+	// }, [theme]);
 
 	const handleMouseEnter = () => {
 		setIsUnderlined(true);
