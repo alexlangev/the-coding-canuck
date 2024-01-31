@@ -23,12 +23,12 @@ export default function FlashCard({
 					<time dateTime={publishedOn}>{humanizedDate}</time>
 				</div>
 				<div className={styles.cardBody}>
-					<p>{abstract}</p>
+					<p className={styles.cardAbstract}>{abstract}</p>
 					{imgSrc && (
 						<Polaroid
 							style={{ rotate: `${rotation}deg` }}
 							src={imgSrc}
-							width={180}
+							// width={180}
 							height={180}
 						/>
 					)}

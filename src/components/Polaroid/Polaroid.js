@@ -9,6 +9,7 @@ function Polaroid({ caption, src, alt, style, ...delegated }) {
 				className={styles.image}
 				src={src}
 				alt={alt}
+				fill="responsive"
 				{...delegated}
 			/>
 			{caption && <figcaption>{caption}</figcaption>}

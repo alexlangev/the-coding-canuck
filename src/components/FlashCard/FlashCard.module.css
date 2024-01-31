@@ -52,7 +52,7 @@
 }
 
 .cardHeader time {
-    margin-top: 8px;
+    margin-top: 9px;
     font-size: 1.75em;
 }
 
@@ -63,4 +63,10 @@
     flex: 1;
 }
 
-.cardFooter{}
+.cardAbstract {
+    font-size: 1.75em;
+}
+
+.cardFooter{
+    font-size: 1.75em;
+}

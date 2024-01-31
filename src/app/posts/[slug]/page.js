@@ -50,8 +50,10 @@ async function BlogPost({ params }) {
 					title={frontmatter.title}
 					publishedOn={frontmatter.publishedOn}
 				/>
-				<MDXRemote source={content} components={COMPONENT_MAP} />
-				<div>Last edited on: {humanizedDate}</div>
+				<div className={styles.page}>
+					<MDXRemote source={content} components={COMPONENT_MAP} />
+				</div>
+				{/* <div>Last edited on: {humanizedDate}</div> */}
 			</MatrixPaper>
 		</article>
 	);

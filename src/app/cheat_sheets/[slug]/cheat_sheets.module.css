@@ -1,3 +1,38 @@
-.wrapper h2:first-child {
+.wrapper {
+    padding-bottom: 64px;
+    position: relative;
+  }
+  
+  .wrapper h2:first-child {
     margin-top: 0;
-}
+  }
+  
+  .page {
+    position: relative;
+    display: grid;
+    grid-template-columns:
+      1fr min(var(--trimmed-content-width), 100%)
+      1fr;
+    max-width: var(--outer-content-width);
+    margin: 0 auto;
+    padding: 64px var(--viewport-padding) 32px;
+    background-color: var(--dot-matrix-paper-background);
+    box-shadow: var(--shadow-med);
+  }
+  
+  .page ul, .page ol {
+    padding-bottom: 2.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .page > * {
+    grid-column: 2;
+  }
+  
+  @media (min-width: 80rem) {
+    .page {
+      border: 1px solid var(--color-page-border);
+      border-radius: 8px;
+    }
+  }
+  

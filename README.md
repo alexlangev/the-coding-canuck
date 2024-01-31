@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## TODOS
 
-## Getting Started
+### MVP
+[] Fix dot-matrix display issues
+[] add markup and css to "read on..." flash cards
+[] fix css and markup on post-its
+[] style inline code
+[] add box-shadow
 
-First, run the development server:
+### Short term
+[] css paragraph on flash cards
+[] review css variables
+[] add Latex support to mdx
+[] add onScroll markup animation of flashcards and dot-matrix content
+[] Fix Lighthouse warnings if any
+[] edited on section
+[] scotch-tape effect
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Long term
+[] Page transition animations
+[] dark theme values for flash cards, matrix paper and post-its
+[] Projects section
+[] About section
+[] cheat sheets page
+[] posts page
+[] canvas doodle
+[] 3d i,j,k drawing
+[] workspace
