@@ -6,6 +6,7 @@ function useTheme() {
 	useEffect(() => {
 		const root = document.documentElement;
 		setTheme(root.getAttribute("data-color-theme"));
+		// eslint-disable-line react-hooks/exhaustive-deps
 	});
 
 	return theme;

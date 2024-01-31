@@ -1,11 +1,8 @@
 "use client";
-import { RoughSVG } from "react-rough-fiber";
 import { useEffect, useState } from "react";
 import HWMainLogo from "@/components/HWMainLogo";
-import HWNavLink from "@/components/HWNavLink";
+// import HWNavLink from "@/components/HWNavLink";
 import styles from "./Header.module.css";
-import { Sun, Moon } from "react-feather";
-import { RoughNotation } from "react-rough-notation";
 import HWIcon from "@/components/HWIcon";
 
 import Cookie from "js-cookie";
@@ -17,6 +14,7 @@ export default function Header({ initialTheme, className, ...delegated }) {
 	useEffect(() => {
 		const root = document.documentElement;
 		root.setAttribute("data-color-theme", theme);
+		// eslint-disable-line react-hooks/exhaustive-deps
 	}, []);
 
 	function handleToggleTheme() {
