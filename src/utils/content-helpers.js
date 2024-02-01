@@ -12,10 +12,10 @@ function readDirectory(localPath) {
 }
 
 const getCheatSheets = async () => {
-	const fileNames = await readDirectory("content/cheat_sheets");
+	const fileNames = await readDirectory("./content/cheat_sheets");
 	const cheatSheets = [];
 	for (const fileName of fileNames) {
-		const rawContent = await readFile(`content/cheat_sheets/${fileName}`);
+		const rawContent = await readFile(`./content/cheat_sheets/${fileName}`);
 		const { data: frontmatter } = matter(rawContent);
 		cheatSheets.push({
 			slug: fileName.replace(".mdx", ""),
@@ -26,10 +26,10 @@ const getCheatSheets = async () => {
 };
 
 const getBlogPosts = async () => {
-	const fileNames = await readDirectory("content/posts");
+	const fileNames = await readDirectory("./content/posts");
 	const posts = [];
 	for (const fileName of fileNames) {
-		const rawContent = await readFile(`content/posts/${fileName}`);
+		const rawContent = await readFile(`./content/posts/${fileName}`);
 		const { data: frontmatter } = matter(rawContent);
 		posts.push({
 			slug: fileName.replace(".mdx", ""),
@@ -41,9 +41,9 @@ const getBlogPosts = async () => {
 
 const getLatestContent = async () => {
 	const content = [];
-	const contentTypes = await readDirectory("content");
+	const contentTypes = await readDirectory("./content");
 	for (const contentType of contentTypes) {
-		const fileNames = await readDirectory(`content/${contentType}`);
+		const fileNames = await readDirectory(`./content/${contentType}`);
 		for (const fileName of fileNames) {
 			const rawContent = await readFile(
 				`content/${contentType}/${fileName}`
