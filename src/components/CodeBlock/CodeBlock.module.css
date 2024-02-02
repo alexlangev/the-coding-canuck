@@ -1,6 +1,7 @@
 .wrapper {
     border-radius: 0px !important;
-    margin: 0px calc(var(--viewport-padding) * -1) 64px !important;
+    margin: 0px 0px 64px 0px !important;
+    box-shadow: var(--shadow-med);
   }
   .wrapper pre {
     padding: var(--viewport-padding) !important;
