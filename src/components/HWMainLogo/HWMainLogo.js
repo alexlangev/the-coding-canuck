@@ -5,16 +5,16 @@ import Link from "next/link";
 import styles from "./HWMainLogo.module.css";
 import { RoughNotation } from "react-rough-notation";
 import { BLOG_TITLE } from "@/constants";
-// import { useTheme } from "@/utils/hooks/useTheme";
+import { useTheme } from "@/utils/hooks/useTheme";
 
 export default function HWMainLogo() {
 	const [isUnderlined, setIsUnderlined] = useState(false);
 	const [underlinedColor, setUnderlinedColor] = useState("white");
-	// const theme = useTheme();
+	const theme = useTheme();
 
-	// useEffect(() => {
-	// 	setUnderlinedColor(theme === "light" ? "black" : "white");
-	// }, [theme]);
+	useEffect(() => {
+		setUnderlinedColor(theme === "light" ? "black" : "white");
+	}, [theme]);
 
 	const handleMouseEnter = () => {
 		setIsUnderlined(true);

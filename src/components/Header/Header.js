@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import HWMainLogo from "@/components/HWMainLogo";
-// import HWNavLink from "@/components/HWNavLink";
+import HWNavLink from "@/components/HWNavLink";
 import styles from "./Header.module.css";
 import HWIcon from "@/components/HWIcon";
 
@@ -51,7 +51,7 @@ export default function Header({ initialTheme, className, ...delegated }) {
 					</ul>
 				</nav>
 			</div>
-			{/*<div>
+			<div>
 				<button className={styles.action} onClick={handleToggleTheme}>
 					{theme === "light" ? (
 						<HWIcon icon="Sun" size="2rem" />
@@ -59,7 +59,7 @@ export default function Header({ initialTheme, className, ...delegated }) {
 						<HWIcon icon="Moon" size="2rem" />
 					)}
 				</button>
-			</div>*/}
+			</div>
 		</div>
 	);
 }
