@@ -1,0 +1,67 @@
+---
+title: "Algorithms and Data Structures cheat sheet"
+abstract: "Don't be a script kitty."
+publishedOn: "2024-02-06T12:00:00-0400"
+lastEditedOn: "2024-02-06T12:00:00-0400"
+---
+
+## Table of content
+
+- [Algorithms](#algorithms)
+    - [Bubble Sort](#bubble-sort)
+    - [Merge Sort](#merge-sort)
+
+Learn the basics you script-kitty!
+
+## <a id="algorithms"></a>Algorithms
+### <a id="bubble-sort"></a>Bubble Sort
+A `O(n^2)` algorithm. It's slow but it's easy too write and interpret!
+
+```python
+def bubbleSort(dataList):
+    swapping = True
+    while swapping:
+        swapping = False
+        for i in range(1, len(dataList)):
+            if dataList[i - 1] > dataList[i]:
+                dataList[i - 1], dataList[i] = dataList[i], dataList[i - 1]
+                swapping = True
+    return dataList
+```
+
+### <a id="merge-sort"></a>Merge Sort
+A `O(n * log(n))` algorithm. It's faster than *bubble sort* but uses more memory. It takes longer to implement.
+
+```python
+def merge_sort(nums):
+    if len(nums) < 2:
+        return nums
+
+    first = merge_sort(nums[: len(nums) // 2])
+    second = merge_sort(nums[len(nums) // 2 : ])
+
+    return merge(first, second)
+
+def merge(first, second):
+    final = []
+    i = 0
+    j = 0
+
+    while i < len(first) and j < len(second):
+        if first[i] <= second[j]:
+            final.append(first[i])
+            i += 1
+        else:
+            final.append(second[j])
+            j += 1
+    
+    while i < len(first):
+        final.append(first[i])
+        i += 1
+        
+    while j < len(second):
+        final.append(second[j])
+        j += 1
+
+    return final
+```
