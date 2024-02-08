@@ -10,37 +10,34 @@ export default function HWAnchor({ children, href, internal = false }) {
 		useHover();
 
 	return (
-		<div
+		<RoughNotation
 			className={styles.wrapper}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onFocus={onFocus}
 			onBlur={onBlur}
+			type="underline"
+			show={isHovered}
+			color="blue"
+			strokeWidth={2}
+			animationDuration={250}
+			padding={0}
 		>
-			<RoughNotation
-				type="underline"
-				show={isHovered}
-				color="blue"
-				strokeWidth={2}
-				animationDuration={250}
-				padding={0}
-			>
-				{internal && (
-					<Link className={styles.anchor} href={href}>
-						{children}
-					</Link>
-				)}
-				{!internal && (
-					<a
-						className={styles.anchor}
-						href={href}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						{children}
-					</a>
-				)}
-			</RoughNotation>
-		</div>
+			{internal && (
+				<Link className={styles.anchor} href={href}>
+					{children}
+				</Link>
+			)}
+			{!internal && (
+				<a
+					className={styles.anchor}
+					href={href}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{children}
+				</a>
+			)}
+		</RoughNotation>
 	);
 }

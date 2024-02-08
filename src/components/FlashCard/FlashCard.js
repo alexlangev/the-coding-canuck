@@ -21,7 +21,9 @@ export default function FlashCard({
 			<div className={styles.content}>
 				<div className={styles.cardHeader}>
 					<h3 className={styles.title}>{title}</h3>
-					<time dateTime={publishedOn}>{humanizedDate}</time>
+					<time className={styles.dateTime} dateTime={publishedOn}>
+						{humanizedDate}
+					</time>
 				</div>
 				<div className={styles.cardBody}>
 					<p className={styles.cardAbstract}>{abstract}</p>

@@ -4,6 +4,7 @@ import { RoughNotation } from "react-rough-notation";
 import { Sun, Moon } from "react-feather";
 import { useEffect, useState } from "react";
 import { useTheme } from "@/utils/hooks/useTheme";
+import { useHover } from "@/utils/hooks/useHover";
 
 const VALID_ICONS = ["Sun", "Moon"];
 
@@ -16,42 +17,28 @@ export default function HWIcon({ icon, ...delegated }) {
 
 	const [isUnderlined, setIsUnderlined] = useState(false);
 	const [underlinedColor, setUnderlinedColor] = useState("white");
+	const { isHovered, onMouseEnter, onMouseLeave, onFocus, onBlur } =
+		useHover();
 	const theme = useTheme();
 
 	useEffect(() => {
 		setUnderlinedColor(theme === "light" ? "black" : "white");
 	}, [theme]);
 
-	const handleMouseEnter = () => {
-		setIsUnderlined(true);
-	};
-
-	const handleMouseLeave = () => {
-		setIsUnderlined(false);
-	};
-
-	const handleFocus = () => {
-		setIsUnderlined(true);
-	};
-
-	const handleBlur = () => {
-		setIsUnderlined(false);
-	};
-
 	if (icon === "Sun") {
 		return (
 			<RoughNotation
-				onMouseEnter={handleMouseEnter}
-				onMouseLeave={handleMouseLeave}
-				onFocus={handleFocus}
-				onBlur={handleBlur}
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+				onFocus={onFocus}
+				onBlur={onBlur}
 				strokeWidth={2.5}
 				padding={10}
 				animationDelay={0}
 				animationDuration={300}
 				iterations={1.2}
 				type="circle"
-				show={isUnderlined}
+				show={isHovered}
 				animate={true}
 				color={underlinedColor}
 			>
