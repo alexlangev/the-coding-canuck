@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import Polaroid from "../Polaroid";
 import styles from "./FlashCard.module.css";
+import HWAnchor from "../HWAnchor";
 
 export default function FlashCard({
 	slug,
@@ -19,7 +20,7 @@ export default function FlashCard({
 			<div className={styles.decoratingBlueLines} />
 			<div className={styles.content}>
 				<div className={styles.cardHeader}>
-					<h3>{title}</h3>
+					<h3 className={styles.title}>{title}</h3>
 					<time dateTime={publishedOn}>{humanizedDate}</time>
 				</div>
 				<div className={styles.cardBody}>
@@ -33,8 +34,11 @@ export default function FlashCard({
 						/>
 					)}
 				</div>
+
 				<div className={styles.cardFooter}>
-					<a href={href}>Read On...</a>
+					<HWAnchor href={href} internal={true}>
+						Read On...
+					</HWAnchor>
 				</div>
 			</div>
 		</div>
