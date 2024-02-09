@@ -15,7 +15,6 @@ export default function HWIcon({ icon, ...delegated }) {
 		);
 	}
 
-	const [isUnderlined, setIsUnderlined] = useState(false);
 	const [underlinedColor, setUnderlinedColor] = useState("white");
 	const { isHovered, onMouseEnter, onMouseLeave, onFocus, onBlur } =
 		useHover();
@@ -50,17 +49,17 @@ export default function HWIcon({ icon, ...delegated }) {
 	} else {
 		return (
 			<RoughNotation
-				onMouseEnter={handleMouseEnter}
-				onMouseLeave={handleMouseLeave}
-				onFocus={handleFocus}
-				onBlur={handleBlur}
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+				onFocus={onFocus}
+				onBlur={onBlur}
 				strokeWidth={2.5}
 				padding={3}
 				animationDelay={0}
 				animationDuration={300}
 				iterations={1.5}
 				type="circle"
-				show={isUnderlined}
+				show={isHovered}
 				animate={true}
 				color={underlinedColor}
 			>
