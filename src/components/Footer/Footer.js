@@ -3,7 +3,8 @@ import React from "react";
 import styles from "./Footer.module.css";
 import MainLogo from "../HWMainLogo";
 import PostIt from "../PostIt";
-import Link from "next/link";
+import HWAnchor from "../HWAnchor";
+import { RoughNotation } from "react-rough-notation";
 
 function Footer() {
 	let dataColorTheme = null;
@@ -16,35 +17,43 @@ function Footer() {
 		<div className={styles.wrapper}>
 			<MainLogo />
 			<PostIt>
-				<h3 className={styles.header}>Where to find me:</h3>
+				<h3 className={styles.header}>
+					<RoughNotation
+						show={true}
+						animate={false}
+						type="underline"
+						color="black"
+						strokeWidth={3}
+						padding={-15}
+					>
+						Where to find me:
+					</RoughNotation>
+				</h3>
 
 				<ul className={styles.linkList}>
 					<li>
-						<Link
+						<HWAnchor
 							href={"https://www.linkedin.com/in/alexlangev/"}
-							target="_blank"
-							rel="noopener noreferrer"
+							internal={false}
 						>
 							LinkedIn
-						</Link>
+						</HWAnchor>
 					</li>
 					<li>
-						<Link
+						<HWAnchor
 							href={"https://github.com/alexlangev"}
-							target="_blank"
-							rel="noopener noreferrer"
+							internal={false}
 						>
 							Github
-						</Link>
+						</HWAnchor>
 					</li>
 					<li>
-						<Link
+						<HWAnchor
 							href={"https://twitter.com/TheCodingCanuck"}
-							target="_blank"
-							rel="noopener noreferrer"
+							internal={false}
 						>
 							Twitter
-						</Link>
+						</HWAnchor>
 					</li>
 				</ul>
 			</PostIt>

@@ -21,7 +21,7 @@ export default function HWAnchor({ children, href, internal = false }) {
 			color="blue"
 			strokeWidth={2}
 			animationDuration={250}
-			padding={0}
+			padding={-5}
 		>
 			{internal && (
 				<Link className={styles.anchor} href={href}>
