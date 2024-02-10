@@ -6,11 +6,27 @@ lastEditedOn: "2024-02-09T12:00:00-0400"
 ---
 
 # Table of contents
+- [Inline styling](#inline)
 - [Mapping over data](#map)
 - [Conditional rendering](#conditional-rendering)
+- [Forms](#forms)
 
 If you're reading this, you probably are already using React so I won't bore you into a description of what it is. If you don't find what you're looking for here, just read the <a target="_blank" rel="noopener noreferrer" href="https://react.dev/reference/react/">official docs</a>.
 
+## <a id="inline"></a>Inline styles
+
+Inline styles are styles passed as a prop. It is *more specific than a styleshet* so **be careful**! Generally don't use it.
+
+```jsx
+function MyComponent() {
+    return (
+        <div>
+        <h1 style={{color: "red"}}>Hello Style!</h1>
+        <p>Add a little style!</p>
+        </div>
+    );
+}
+```
 
 ## <a id="map"></a>Mapping over data
 
@@ -100,3 +116,30 @@ function Person({ name, isDead }) {
 }
 ```
 
+## <a id="forms"></a>Forms
+
+The first thing to do is to prevent the default behavior of submitting a form which is to refresh the page.
+
+```jsx
+function MyForm() {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            {/* some labels and input components */}
+        </form>
+    );
+}
+```
+
+Fill this section as you go...
+
+- textareas
+- select
+- checkboxes
+- radio buttons
+- ranges
+- color pickers
+- date pickers
