@@ -1,0 +1,102 @@
+---
+title: "React cheat sheet"
+abstract: "A cheatsheet of React things I constantly have to look up."
+publishedOn: "2024-02-09T12:00:00-0400"
+lastEditedOn: "2024-02-09T12:00:00-0400"
+---
+
+# Table of contents
+- [Mapping over data](#map)
+- [Conditional rendering](#conditional-rendering)
+
+If you're reading this, you probably are already using React so I won't bore you into a description of what it is. If you don't find what you're looking for here, just read the <a target="_blank" rel="noopener noreferrer" href="https://react.dev/reference/react/">official docs</a>.
+
+
+## <a id="map"></a>Mapping over data
+
+Adding keys to children in a list helps react keep track of stuff. I can help with performance.
+
+
+```jsx
+const data = [
+    {
+        title: "My first blog post",
+        abstract: "This is the abstract of my first blog post.",
+        date: "2024-02-09T12:00:00-0400"
+    },
+    {
+        title: "My second blog post",
+        abstract: "This is the abstract of my second blog post.",
+        date: "2024-02-09T12:00:00-0400"
+    }
+];
+
+function MyComponent() {
+    return (
+        <ul>
+        {data.map((blogPost) => {
+            <ContactCard
+            key={Crypto.randomUUID()} // could be blogPost.id if you have one
+            title={blogPost.title}
+            abstract={blogPost.abstract}
+            date={blogPost.date}
+        />
+        })}
+    </ul>
+    );
+}
+```
+
+If you forget the key prop you'll get this beautiful warning:
+
+```
+Warning: Each child in a list should have a unique "key" prop.
+```
+
+Take note, they are not global. You can implement the same key in different lists.
+
+## <a id="conditional-rendering"></a>Conditional rendering
+
+Theres a milions ways to do this. A lot of them have drawbacks. Here's some options.
+
+### If else
+
+Only good if there is two options. But don't use it, it's kind of bad. Having two return makes things harder to understand.
+
+```jsx
+function Person({ name, isDead }) {
+    if(isDead) {
+        return <Obituary name={name} />
+    } else {
+        return <Bio name={name} />
+    }
+}
+```
+
+### Ternary operator
+
+Again, only good if there is two options. **Don't nest ternaries**!
+
+```jsx
+function Person({ name, isDead }) {
+    return (
+        isDead ? <Obituary name={name} /> : <Bio name={name} />
+    )
+}
+```
+
+### The && operator
+
+Pretty much always the go-to.
+
+```jsx
+function Person({ name, isDead }) {
+    return (
+        <>
+            {isDead && <Obituary name={name} />}
+            {!isDead && <Bio name={name} />}
+        </>
+    )
+}
+```
+
