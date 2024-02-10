@@ -15,7 +15,7 @@
   content: "";
   display: block;
   height: 30px;
-  /* position: absolute; */
+  position: absolute;
   margin: auto;
   width: 100px;
 }

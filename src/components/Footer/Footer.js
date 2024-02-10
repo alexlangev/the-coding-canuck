@@ -17,18 +17,7 @@ function Footer() {
 		<div className={styles.wrapper}>
 			<MainLogo />
 			<PostIt>
-				<h3 className={styles.header}>
-					<RoughNotation
-						show={true}
-						animate={false}
-						type="underline"
-						color="black"
-						strokeWidth={3}
-						padding={-15}
-					>
-						Where to find me:
-					</RoughNotation>
-				</h3>
+				<h3 className={styles.header}>Where to find me:</h3>
 
 				<ul className={styles.linkList}>
 					<li>
