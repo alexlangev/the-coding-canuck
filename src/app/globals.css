@@ -161,11 +161,10 @@ p code {
   border-radius: 3px;
   background-color: #0d1117;
   color: #A5D6FF;
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-code);
   font-size: 0.9em;
   font-weight: 600;
   box-shadow: var(--shadow-low);
-
 }
 
 details {
