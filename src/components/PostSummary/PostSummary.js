@@ -1,25 +1,14 @@
-"use-client";
-import { format } from "date-fns";
+"use client";
 import Link from "next/link";
-import HDBracket from "../HDMarkup/HDBracket";
-import HDUnderline from "../HDMarkup/HDUnderline";
 import styles from "./PostSummary.module.css";
+import HDBracket from "../HDMarkup/HDBracket";
 
-export default function PostSummary({ slug, title, publishedOn, abstract }) {
-    const humanizedDate = format(new Date(publishedOn), "MMMM do, yyyy");
-
+export default function PostSummary({ slug, title, abstract }) {
     return (
-        <HDBracket color={"black"}>
+        <HDBracket color="black" onHover={true}>
             <article className={styles.wrapper}>
-                <h3 className={styles.title}>
-                    {/* <HDUnderline> */}
-                    {title}
-                    {/* </HDUnderline> */}
-                </h3>
-                {/* <time className={styles.date} dateTime={publishedOn}>
-                    {humanizedDate}
-                </time> */}
-                <p>{abstract}</p>
+                <h3 className={styles.title}>{title}</h3>
+                <p className={styles.abstract}>{abstract}</p>
                 <Link className={styles.link} href={slug}>
                     Read more...
                 </Link>

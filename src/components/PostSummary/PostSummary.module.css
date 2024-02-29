@@ -2,17 +2,19 @@
     width: 300px;
 }
 
-.date {
-    color: blue;
+.title {
+    /* text-decoration: underline; */
+    /* text-decoration-color: black; */
+    margin-top: 0;
+    font-size: 2.25rem;
 }
 
-.title {
-    text-decoration: underline red;
-    margin-top: 0;
-    /* color: red; */
+.abstract {
+    font-size: 1.5rem;
 }
 
 .link{
     color: green;
+    font-size: 1.5rem;
 }
 

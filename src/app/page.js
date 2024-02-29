@@ -23,7 +23,7 @@ export default async function Home() {
                         and consume my cheat sheets and dot files.
                     </p>
                 </div>
-                <h2>Cheet sheets</h2>
+                <h2 className={styles.subTitle}>Cheat sheets:</h2>
                 <div className={styles.postsWrapper}>
                     {content.map(({ title, ...delegated }) => (
                         <PostSummary key={title} title={title} {...delegated} />
