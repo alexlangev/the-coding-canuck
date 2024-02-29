@@ -7,10 +7,14 @@ export default function PostSummary({ slug, title, abstract }) {
     return (
         <HDBracket color="black" onHover={true}>
             <article className={styles.wrapper}>
-                <h3 className={styles.title}>{title}</h3>
-                <p className={styles.abstract}>{abstract}</p>
-                <Link className={styles.link} href={slug}>
-                    Read more...
+                <Link
+                    className={styles.link}
+                    href={slug}
+                    style={{ textDecoration: "none" }}
+                >
+                    <h3 className={styles.title}>{title}</h3>
+                    <p className={styles.abstract}>{abstract}</p>
+                    <p className={styles.fakeLink}>Read more...</p>
                 </Link>
             </article>
         </HDBracket>

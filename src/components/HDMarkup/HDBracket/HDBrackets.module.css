@@ -1,4 +1,5 @@
 .wrapper {
     width: fit-content;
-    display: block;
+    /* height: fit-content; */
+    /* display: block; */
 }

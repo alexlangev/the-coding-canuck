@@ -11,7 +11,6 @@ export default function HDBrackets({
     const { isHovered, onMouseEnter, onMouseLeave, onFocus, onBlur } =
         useHover();
     const show = onHover ? isHovered : true;
-    console.log(isHovered);
 
     return (
         <RoughNotation
@@ -26,6 +25,7 @@ export default function HDBrackets({
             show={show}
             strokeWidth={3}
             iterations={1}
+            animationDuration={375}
             animate={true}
         >
             {children}
