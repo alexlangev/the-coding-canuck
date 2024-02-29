@@ -12,20 +12,23 @@ export default async function Home() {
                 <h1>The Coding Canuck</h1>
             </VisuallyHidden>
             <div>
-                <p>
-                    What{"'"}s up internet! My name is Alex Langevin, also know
-                    many places online as The Coding Canuck. I am a Full-Stack
-                    web2 and web3 developper. I{"'"}m also a cybersecurity and
-                    cryptography enthousiast.
-                </p>
-                <p>
-                    This might become a full-fledge blog one day but for now it
-                    {"'"}s where i keep my cheatsheets. Feel free to use them.
-                </p>
-                <h2>Latest content</h2>
-                {content.map(({ title, ...delegated }) => (
-                    <PostSummary key={title} title={title} {...delegated} />
-                ))}
+                <div className={styles.heroWrapper}>
+                    <div className={styles.greetWrapper}>
+                        <p className={styles.greet}>What{"'"}s up</p>
+                        <p className={styles.greet}>Internet!</p>
+                    </div>
+                    <p className={styles.text}>
+                        This website will eventually become a professional
+                        portfolio. For the moment it is a place for me to save
+                        and consume my cheat sheets and dot files.
+                    </p>
+                </div>
+                <h2>Cheet sheets</h2>
+                <div className={styles.postsWrapper}>
+                    {content.map(({ title, ...delegated }) => (
+                        <PostSummary key={title} title={title} {...delegated} />
+                    ))}
+                </div>
             </div>
         </div>
     );

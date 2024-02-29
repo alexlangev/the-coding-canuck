@@ -2,12 +2,13 @@
 import { RoughNotation } from "react-rough-notation";
 import styles from "./HDBrackets.module.css";
 
-export default function HDBrackets({ children }) {
+export default function HDBrackets({ children, color = "black" }) {
     return (
         <RoughNotation
+            className={styles.wrapper}
             type={"bracket"}
             brackets={["left", "right"]}
-            color="red"
+            color={color}
             show={"true"}
             strokeWidth={3}
             iterations={1}

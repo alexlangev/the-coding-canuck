@@ -1,0 +1,18 @@
+.wrapper {
+    width: 300px;
+}
+
+.date {
+    color: blue;
+}
+
+.title {
+    text-decoration: underline red;
+    margin-top: 0;
+    /* color: red; */
+}
+
+.link{
+    color: green;
+}
+
