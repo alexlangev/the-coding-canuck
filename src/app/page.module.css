@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     max-width: var(--content-width);
-    padding: 64px var(--viewport-padding);
+    padding: 64px var(--viewport-padding) 128px var(--viewport-padding);
     margin: 0 auto;
     font-family: var(--font-family-hand);
 }
@@ -22,7 +22,7 @@
   grid-row-gap: 50px;
   justify-items: center;
   grid-template-columns:
-  repeat(auto-fill, minmax(300px, 1fr));
+  repeat(auto-fill, minmax(375px, 1fr));
 }
 
 .greetWrapper {
