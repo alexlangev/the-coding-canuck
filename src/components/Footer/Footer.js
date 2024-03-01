@@ -3,51 +3,49 @@ import React from "react";
 import styles from "./Footer.module.css";
 import MainLogo from "../HWMainLogo";
 import PostIt from "../PostIt";
-import HWAnchor from "../HWAnchor";
-import { RoughNotation } from "react-rough-notation";
 
 function Footer() {
-	let dataColorTheme = null;
-	if (typeof document !== "undefined") {
-		const root = document.documentElement;
-		dataColorTheme = root.getAttribute("data-color-theme");
-	}
+    let dataColorTheme = null;
+    if (typeof document !== "undefined") {
+        const root = document.documentElement;
+        dataColorTheme = root.getAttribute("data-color-theme");
+    }
 
-	return (
-		<div className={styles.wrapper}>
-			<MainLogo />
-			<PostIt>
-				<h3 className={styles.header}>Where to find me:</h3>
+    return (
+        <div className={styles.wrapper}>
+            <MainLogo />
+            <PostIt>
+                <h3 className={styles.header}>Where to find me:</h3>
 
-				<ul className={styles.linkList}>
-					<li>
-						<HWAnchor
-							href={"https://www.linkedin.com/in/alexlangev/"}
-							internal={false}
-						>
-							LinkedIn
-						</HWAnchor>
-					</li>
-					<li>
-						<HWAnchor
-							href={"https://github.com/alexlangev"}
-							internal={false}
-						>
-							Github
-						</HWAnchor>
-					</li>
-					<li>
-						<HWAnchor
-							href={"https://twitter.com/TheCodingCanuck"}
-							internal={false}
-						>
-							Twitter
-						</HWAnchor>
-					</li>
-				</ul>
-			</PostIt>
-		</div>
-	);
+                <ul className={styles.linkList}>
+                    <li>
+                        <a
+                            href={"https://www.linkedin.com/in/alexlangev/"}
+                            internal={false}
+                        >
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href={"https://github.com/alexlangev"}
+                            internal={false}
+                        >
+                            Github
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href={"https://twitter.com/TheCodingCanuck"}
+                            internal={false}
+                        >
+                            Twitter
+                        </a>
+                    </li>
+                </ul>
+            </PostIt>
+        </div>
+    );
 }
 
 export default Footer;

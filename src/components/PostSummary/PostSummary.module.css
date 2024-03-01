@@ -1,0 +1,25 @@
+.wrapper {
+    width: 375px;
+    cursor: pointer;
+    height: 100%;
+}
+
+
+.title {
+    color: var(--cards-title);
+    text-decoration-color: var(--cards-title);
+    text-decoration: underline;
+    margin-top: 0;
+    font-size: 2.25rem;
+}
+
+.abstract {
+    font-size: 1.75rem;
+}
+
+.fakeLink{
+    color: var(--cards-link);
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
