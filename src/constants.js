@@ -12,6 +12,9 @@ export const LIGHT_TOKENS = {
     "--cards-title": "blue",
     "--cards-link": "green",
 
+    // Posts
+    "--color-post-background": "hsl(45, 100%, 85%)",
+
     // grid paper
     "--grid-paper-background": "hsl(0, 0%, 100%)",
     "--grid-paper-lines": "hsl(0, 0%, 88%)",
@@ -43,6 +46,9 @@ export const DARK_TOKENS = {
     // Cards
     "--cards-title": "darksalmon",
     "--cards-link": "plum",
+
+    // Posts
+    "--color-post-background": "hsl(240, 2%, 15%)",
 
     // grid paper
     "--grid-paper-background": "hsl(240, 2%, 11%)",

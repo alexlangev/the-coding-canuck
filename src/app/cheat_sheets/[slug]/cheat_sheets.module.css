@@ -16,7 +16,7 @@
     max-width: var(--outer-content-width);
     margin: 0 auto;
     padding: 64px var(--viewport-padding) 32px;
-    background-color: var(--dot-matrix-paper-background);
+    background-color: var(--color-post-background);
   }
   
   .page ul, .page ol {
