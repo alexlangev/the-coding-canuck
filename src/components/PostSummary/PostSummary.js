@@ -5,7 +5,7 @@ import HDBracket from "../HDMarkup/HDBracket";
 
 export default function PostSummary({ slug, title, abstract }) {
     return (
-        <HDBracket color="black" onHover={true}>
+        <HDBracket onHover={true}>
             <article className={styles.wrapper}>
                 <Link
                     className={styles.link}

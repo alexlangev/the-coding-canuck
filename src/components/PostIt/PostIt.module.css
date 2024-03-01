@@ -6,11 +6,9 @@
     padding: 1em;
     padding-top: 0;
     rotate: 2deg;
-    color: black;
+    color: var(--color-primary);
     font-family: var(--font-family-hand);
     display: flex;
     flex-direction: column;  
     box-shadow: var(--shadow-med);
   }
-
-  

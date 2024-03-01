@@ -2,15 +2,19 @@
 import { RoughNotation } from "react-rough-notation";
 import styles from "./HDBrackets.module.css";
 import { useHover } from "@/utils/hooks/useHover";
+import { useTheme } from "@/utils/hooks/useTheme";
+import { useEffect, useState } from "react";
 
-export default function HDBrackets({
-    children,
-    color = "black",
-    onHover = false,
-}) {
+export default function HDBrackets({ children, onHover = false }) {
     const { isHovered, onMouseEnter, onMouseLeave, onFocus, onBlur } =
         useHover();
+    const [underlinedColor, setUnderlinedColor] = useState("white");
     const show = onHover ? isHovered : true;
+    const theme = useTheme();
+
+    useEffect(() => {
+        setUnderlinedColor(theme === "light" ? "black" : "white");
+    }, [theme]);
 
     return (
         <RoughNotation
@@ -21,7 +25,7 @@ export default function HDBrackets({
             className={styles.wrapper}
             type={"bracket"}
             brackets={["left", "right"]}
-            color={color}
+            color={underlinedColor}
             show={show}
             strokeWidth={3}
             iterations={1}

@@ -6,9 +6,9 @@
 
 
 .title {
-    color: blue;
+    color: var(--cards-title);
+    text-decoration-color: var(--cards-title);
     text-decoration: underline;
-    text-decoration-color: blue;
     margin-top: 0;
     font-size: 2.25rem;
 }
@@ -18,9 +18,7 @@
 }
 
 .fakeLink{
-    color: green;
-    /* text-decoration: underline;
-    text-decoration-color: green; */
+    color: var(--cards-link);
     margin-bottom: 0;
     font-size: 1.5rem;
 }
